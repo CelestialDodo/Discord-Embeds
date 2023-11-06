@@ -2,23 +2,8 @@
 <html>
 <head>
   <title>Action Embed</title>
-  <script>
-   // Get the value of the "url" parameter from the URL
-   const urlParams = new URLSearchParams(window.location.search);
-   const profileV = urlParams.get('profile');
-   const userV = urlParams.get('user');
-   const timeV = urlParams.get('time');
-   var profile = profileV + "?size=1024"
-   var user = "@" + userV
-   var time = timeV
-
-    // Use the value in your HTML
-    document.getElementById('profile1').setAttribute('content', profile);
-    document.getElementById('profile2').setAttribute('content', profile);
-    document.getElementById('profile3').setAttribute('content', profile);
-  </script>
   <meta content="Kicked" property="og:title" />
-  <meta property="og:description" content="Reason: Unknown
+  <meta id="desc" property="og:description" content="Reason: Unknown
     User: Unknown
     Time Left: Unknown" />
   <meta id="profile1" name="og:image" content="https://cdn.discordapp.com/avatars/1136296271213244416/f6698c980879775d8202421547c9aa6e?size=1024">
@@ -61,17 +46,43 @@
     <div class="embed-title">Kicked</div>
     <div class="embed-field">
       <span class="embed-field-name">Reason:</span>
-      <span>Spreading Lies</span>
+      <span id="reason2">Spreading Lies</span>
     </div>
     <div class="embed-field">
       <span class="embed-field-name">User Kicked:</span>
-      <span>@kalanii_official</span>
+      <span id="user2">@kalanii_official</span>
     </div>
     <div class="embed-field">
       <span class="embed-field-name">Time Left:</span>
-      <span><t:1699316340:R></span>
+      <span id="time2"><t:1699316340:R></span>
     </div>
     <img id="profile3" class="embed-thumbnail" src="https://cdn.discordapp.com/avatars/1136296271213244416/f6698c980879775d8202421547c9aa6e?size=1024" alt="Thumbnail">
   </div>
 </body>
+<script>
+    // Get the value of the "url" parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const profileV = urlParams.get('profile');
+    const userV = urlParams.get('user');
+    const timeV = urlParams.get('time');
+    const reasonV = urlParams.get('reason');
+    var profile = profileV + "?size=1024"
+    var user = "@" + userV
+    var time = timeV
+    var reason = reasonV
+ 
+     // Use the value in your HTML
+     document.getElementById('profile1').setAttribute('content', profile);
+     document.getElementById('profile2').setAttribute('content', profile);
+     document.getElementById('profile3').setAttribute('src', profile);
+
+     document.getElementById('user2').innerText = user;
+     document.getElementById('reason2').innerText = reason;
+     document.getElementById('time2').innerText = time;
+
+     var stats = reason + "\n" + user + "\n" + time
+     console.log(stats)
+
+     document.getElementById('desc').setAttribute('content', stats);
+</script>
 </html>
