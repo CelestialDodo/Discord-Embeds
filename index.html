@@ -8,8 +8,8 @@
    const profileValue = urlParams.get('profile');
 
     // Use the value in your HTML
-    document.getElementById('profile_pick').content = profileValue;
-    document.getElementById('profile_pick1').content = profileValue;
+    document.getElementById('profile_pick').setAttribute('content', profileValue);
+    document.getElementById('profile_pick1').setAttribute('content', profileValue);
   </script>
   <meta content="Kicked" property="og:title" />
   <meta content="Site Description" property="og:description" />
