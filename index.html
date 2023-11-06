@@ -5,18 +5,23 @@
   <script>
    // Get the value of the "url" parameter from the URL
    const urlParams = new URLSearchParams(window.location.search);
-   const profileValue = urlParams.get('profile');
+   const profileV = urlParams.get('profile');
+   const userV = urlParams.get('user');
+   const timeV = urlParams.get('time');
+   var profile = profileV + "?size=1024"
+   var user = "@" + userV
+   var time = timeV
 
     // Use the value in your HTML
-    //document.getElementById('profile_pick').setAttribute('content', profileValue);
-    //document.getElementById('profile_pick1').setAttribute('content', profileValue);
+    document.getElementById('profile1').setAttribute('content', profile);
+    document.getElementById('profile2').setAttribute('content', profile);
   </script>
   <meta content="Kicked" property="og:title" />
   <meta property="og:description" content="Reason: Unknown
     User: Unknown
     Time Left: Unknown" />
-  <meta name="og:image" content="https://cdn.discordapp.com/avatars/1136296271213244416/f6698c980879775d8202421547c9aa6e?size=1024">
-  <meta name="twitter:image" content="https://cdn.discordapp.com/avatars/1136296271213244416/f6698c980879775d8202421547c9aa6e?size=1024">
+  <meta id="profile1" name="og:image" content="https://cdn.discordapp.com/avatars/1136296271213244416/f6698c980879775d8202421547c9aa6e?size=1024">
+  <meta id="profile2" name="twitter:image" content="https://cdn.discordapp.com/avatars/1136296271213244416/f6698c980879775d8202421547c9aa6e?size=1024">
   <meta content="#43B581" data-react-helmet="true" name="theme-color" />
   <style>
     .embed {
