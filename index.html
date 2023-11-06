@@ -2,23 +2,10 @@
 <html>
 <head>
   <title>Action Embed</title>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const profileV = urlParams.get('profile');
-    const userV = urlParams.get('user');
-    const timeV = urlParams.get('time');
-    const reasonV = urlParams.get('reason');
-    var profile = profileV + "?size=1024"
-    var user = "@" + userV
-    var time = timeV
-    var reason = reasonV
-  </script>
   <meta content="Kicked" property='og:title' />
-  <meta id="desc" property="og:description" content='Reason: ${reason}
-    User: ${user}
-    Time Left: ${time}' />
-  <meta id="profile1" name="og:image" content='${profile}'>
-  <meta id="profile2" name="twitter:image" content='${profile}'>
+  <meta id="desc" property="og:description" content="Reason: Unknown User: Unknown Time Left: Unknown" />
+  <meta id="profile1" name="og:image" content="">
+  <meta id="profile2" name="twitter:image" content="">
   <meta content="#43B581" data-react-helmet="true" name="theme-color" />
   <style>
     .embed {
@@ -51,6 +38,24 @@
       border-radius: 5px;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const profileV = urlParams.get('profile');
+      const userV = urlParams.get('user');
+      const timeV = urlParams.get('time');
+      const reasonV = urlParams.get('reason');
+      var profile = profileV + "?size=1024";
+      var user = "@" + userV;
+      var time = timeV;
+      var reason = reasonV;
+
+      // Update meta tag values
+      document.getElementById('desc').setAttribute('content', `Reason: ${reason}\nUser: ${user}\nTime Left: ${time}`);
+      document.getElementById('profile1').setAttribute('content', profile);
+      document.getElementById('profile2').setAttribute('content', profile);
+    });
+  </script>
 </head>
 <body>
   <div class="embed">
@@ -70,6 +75,16 @@
     <img id="profile3" class="embed-thumbnail" src="https://cdn.discordapp.com/avatars/1136296271213244416/f6698c980879775d8202421547c9aa6e?size=1024" alt="Thumbnail">
   </div>
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const profileV = urlParams.get('profile');
+    const userV = urlParams.get('user');
+    const timeV = urlParams.get('time');
+    const reasonV = urlParams.get('reason');
+    var profile = profileV + "?size=1024";
+    var user = "@" + userV;
+    var time = timeV;
+    var reason = reasonV;
+    
     document.getElementById('profile3').setAttribute('src', profile);
     document.getElementById('user2').innerText = user;
     document.getElementById('reason2').innerText = reason;
